@@ -1,13 +1,22 @@
 <?php
 $Email = filter_input(INPUT_POST,'Email');
 $Password = filter_input(INPUT_POST,'Password') ;
-$FirstName = filter_input(INPUT_POST,'FirstName');
-$LastName=filter_input(INPUT_POST,'LastName');
+$FirstNameReg = filter_input(INPUT_POST,'FirstName');
+$LastNameReg =filter_input(INPUT_POST,'LastName');
 $Birthday=filter_input(INPUT_POST,'Birthday');
 $EmailReg=filter_input(INPUT_POST,'EmailReg');
-$PassReg=filter_input(INPUT_POST,'PassReg');
+$PassReg=filter_input(INPUT_POST,'PassReg' );
+$NameQuestion = filter_input(INPUT_POST,'NameQuestion' );
+$TextBox=filter_input(INPUT_POST,'TextBox' );
+$Skills=filter_input(INPUT_POST,'Skills' , FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY);
+$SkillsStrings= implode($Skills,',');
 $EmailERR="";
-$PassERR  =""; $FirstNameERR=""; $LastNameERR ="";$BirthdayERR ="";
+$PassERR ="";
+$FirstNameERR="";
+$LastNameERR ="";
+$BirthdayERR ="";
+$NameQuestionERR="";
+$TextBoxERR="";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["Email"])) {
@@ -28,22 +37,64 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $PassERR = "PASSWORD MUST BE AT LEAST 8 CHARACTERS";
         }
     }
-    if (empty($_POST["FirstName"])) {
-        $FirstNameERR = "Must enter a first name";
-    }
-    if (empty($_POST["LastName"])) {
-        $LastNameERR = "Must enter a last name";
-    }
-    if (empty($_POST["Birthday"])) {
-        $BirthdayERR = "Must enter a birthdate";
-    }
-    if (empty($_POST["EmailReg"])) {
-        $EmailERR = "Must enter a valid email";
-    }
-    if (empty($_POST["PassReg"])) {
-        $PassERR = "Password is required";
-    }
+
+
+            if (empty($_POST["FirstName"])) {
+            $FirstNameERR = "Must enter a first name";
+                } else {
+            $FirstNameReg = test_input($_POST["FirstName"]);
+
 }
+            if (empty($_POST["LastName"])) {
+            $LastNameERR = "Must enter a last name";
+             } else {
+            $LastNameReg = test_input($_POST["LastName"]);
+}
+
+            if (empty($_POST["Birthday"])) {
+                $BirthdayERR = "Must enter a birthdate";
+            } else {
+                $Birthday = test_input($_POST["Birthday"]);
+
+}
+            if (empty($_POST["EmailReg"])) {
+                    $EmailERR = "Must enter a valid email";
+                } else {
+                    $EmailReg = test_input($_POST["EmailReg"]);
+                    if (!filter_var($EmailReg, FILTER_VALIDATE_EMAIL)) {
+                        $EmailERR = "ENTER A VALID EMAIL FORMAT";
+                    }
+                    }
+
+
+            if (empty($_POST["PassReg"])) {
+                        $PassERR = "Password is required";
+                    } else {
+                        $PassERR = test_input($_POST["PassReg"]);
+                        if (!preg_match('/[^A-Za-z0-9]+/', $Password || strlen($PassReg < 8))) {
+                            $PassERR = "PASSWORD MUST BE AT LEAST 8 CHARACTERS";
+                        }
+                    }
+                }
+
+if (empty($_POST["NameQuestion"])) {
+    $NameQuestionERR = "PLEASE ENTER QUESTION";
+} else if (strlen($NameQuestion < 3)) {
+    $NameQuestionERR = "MUST BE AT LEAST 3 CHARACTERS";
+}else {
+    $NameQuestionERR=test_input($_POST["NameQuestion"]);
+}
+
+
+if (empty($_POST[$TextBox] )) {
+    $TextBoxERR = "MUST ENTER TEXT ";
+} else if (strlen($TextBox >500)){
+    $TextBoxERR = "MUST BE AT UNDER 500 CHARACTERS";
+}else {
+    $TextBoxERR = test_input($_POST["TextBox"]);
+}
+
+
 
 function test_input($data) {
     $data = trim($data);
@@ -52,10 +103,10 @@ function test_input($data) {
     return $data;
 }
 ?>
-
-<html>
-<head><title>Display Form Data</title></head>
 <body>
+<div>
+<head><title>Display Form Data</title></head>
+<>
 <h2>Login Form</h2>
 <div>
     Email : <?php echo $Email; ?>
@@ -66,16 +117,50 @@ function test_input($data) {
     <span class="error">* <?php echo $PassERR;?></span>
 </div>
 
-<section id="Registration">
-    <h2>Registration</h2>
-    First Name: <?php echo $FirstName; ?>
-    Last  Name:<?php echo $LastName;?>
-    Birthday:<?php echo $Birthday;?>
-    Email:<?php echo $EmailReg; ?>
-    Password:<?php echo $PassReg; ?>
-    ?>
 
-</section>
+<h2>Registration</h2>
+<div>
+        First Name: <?php echo $FirstNameReg ; ?>
+        <span class="error">* <?php echo $FirstNameERR ;  ?> </span>
+</div>
+
+    <br>
+
+<div>
+        Last Name: <?php echo $LastNameReg;?><br>
+        <span class="error">* <?php echo $LastNameERR ;  ?> </span>
+
+</div>
+
+<div>
+        Birthday:<?php echo $Birthday;?><br>
+        <span class="error">* <?php echo $BirthdayERR ;  ?> </span>
+</div>
+
+<div>
+        Email:<?php echo $EmailReg; ?><br>
+        <span class="error">* <?php echo $EmailERR ;  ?> </span>
+</div>
+
+<div>
+        Password:<?php echo $PassReg ; ?><br>
+        <span class="error">* <?php echo $PassERR ; ?> </span>
+</div>
+
+
+<h2>Question Form</h2>
+
+    Question Name :<?php echo $NameQuestion ;?><br>
+    <span class="error"> <?php echo $NameQuestionERR ; ?> </span><br>
+
+
+    Question Body : <?php echo $TextBox ; ?><br>
+    <span class="error"><?php echo $TextBoxERR; ?></span><br>
+
+    Skills: <?php echo $SkillsStrings;?>
+
+
+
 </body>
-</html>
 
+</html>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ba04d33-083f-40fb-9f13-3a0d21a609b9" name="Default Changelist" comment="" />
+    <list default="true" id="4ba04d33-083f-40fb-9f13-3a0d21a609b9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/display.php" beforeDir="false" afterPath="$PROJECT_DIR$/display.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +21,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1j3ciOHlKo5TinOco2Wo3Tbtnrg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -25,13 +33,13 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../untitled/task_list.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -43,7 +51,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603036341181</updated>
-      <workItem from="1603036342211" duration="7568000" />
+      <workItem from="1603036342211" duration="9126000" />
+      <workItem from="1603069271081" duration="175000" />
+      <workItem from="1603081579009" duration="2403000" />
+      <workItem from="1603231947140" duration="797000" />
+      <workItem from="1603824830053" duration="3470000" />
     </task>
     <servers />
   </component>
@@ -71,10 +83,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603038228164" />
-    <state x="773" y="295" key="FileChooserDialogImpl" timestamp="1603037465931">
+    <state x="773" y="295" key="FileChooserDialogImpl" timestamp="1603065446637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="773" y="295" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603037465931" />
+    <state x="773" y="295" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603065446637" />
+    <state x="838" y="418" key="Github.ShareDialog" timestamp="1603065474681">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="838" y="418" key="Github.ShareDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603065474681" />
+    <state x="777" y="225" key="Github.UntrackedFilesDialog" timestamp="1603065482434">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603065482434" />
     <state x="827" y="463" key="NewPhpFileDialog" timestamp="1603036460651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -83,6 +103,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="593" y="211" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603037469691" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603065668866">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603065668866" />
     <state x="849" y="439" key="WebDeployment.AddServerDialog.v.1" timestamp="1603037495111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -91,9 +115,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="878" y="270" key="ftp.server.browser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603039118011" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603045083120">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603824934023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603045083120" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603824934023" />
   </component>
 </project>
