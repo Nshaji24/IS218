@@ -8,8 +8,9 @@ $EmailReg=filter_input(INPUT_POST,'EmailReg');
 $PassReg=filter_input(INPUT_POST,'PassReg' );
 $NameQuestion = filter_input(INPUT_POST,'NameQuestion' );
 $TextBox=filter_input(INPUT_POST,'TextBox' );
-$Skills=filter_input(INPUT_POST,'Skills' , FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY);
-$SkillsStrings= implode($Skills,',');
+$Skills=filter_input(INPUT_POST,'Skills');
+
+
 $EmailERR="";
 $PassERR ="";
 $FirstNameERR="";
@@ -31,11 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (empty($_POST["Password"])) {
         $PassERR = "Password is required";
-    } else {
-        $PassERR = test_input($_POST["Password"]);
-        if (!preg_match('/[^A-Za-z0-9]+/', $Password || strlen($Password < 8))) {
+    }else if (!preg_match('/[^A-Za-z0-9]+/', $Password || strlen($Password < 8))) {
             $PassERR = "PASSWORD MUST BE AT LEAST 8 CHARACTERS";
-        }
+        }else {
+        $PassERR = test_input($_POST["Password"]);
     }
 
 
@@ -69,11 +69,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (empty($_POST["PassReg"])) {
                         $PassERR = "Password is required";
-                    } else {
-                        $PassERR = test_input($_POST["PassReg"]);
-                        if (!preg_match('/[^A-Za-z0-9]+/', $Password || strlen($PassReg < 8))) {
+                    }else if (!preg_match('/[^A-Za-z0-9]+/', $Password || strlen($PassReg < 8))) {
                             $PassERR = "PASSWORD MUST BE AT LEAST 8 CHARACTERS";
-                        }
+                        }else {
+                $PassERR = test_input($_POST["PassReg"]);
                     }
                 }
 
@@ -124,26 +123,26 @@ function test_input($data) {
         <span class="error">* <?php echo $FirstNameERR ;  ?> </span>
 </div>
 
-    <br>
+
 
 <div>
-        Last Name: <?php echo $LastNameReg;?><br>
+        Last Name: <?php echo $LastNameReg;?>
         <span class="error">* <?php echo $LastNameERR ;  ?> </span>
 
 </div>
 
 <div>
-        Birthday:<?php echo $Birthday;?><br>
+        Birthday:<?php echo $Birthday;?>
         <span class="error">* <?php echo $BirthdayERR ;  ?> </span>
 </div>
 
 <div>
-        Email:<?php echo $EmailReg; ?><br>
+        Email:<?php echo $EmailReg; ?>
         <span class="error">* <?php echo $EmailERR ;  ?> </span>
 </div>
 
 <div>
-        Password:<?php echo $PassReg ; ?><br>
+        Password:<?php echo $PassReg ; ?>
         <span class="error">* <?php echo $PassERR ; ?> </span>
 </div>
 
@@ -157,10 +156,12 @@ function test_input($data) {
     Question Body : <?php echo $TextBox ; ?><br>
     <span class="error"><?php echo $TextBoxERR; ?></span><br>
 
-    Skills: <?php echo $SkillsStrings;?>
-
-
-
+    Skills: <?php
+    $SkillsSTR=explode("," ,$Skills);
+    for($s = 0; $s < count($SkillsSTR); $s++){
+    echo " $s = $SkillsSTR[$s] <br />";
+    }
+?>
 </body>
 
 </html>
