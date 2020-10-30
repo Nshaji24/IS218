@@ -13,6 +13,7 @@ $Skills=filter_input(INPUT_POST,'Skills');
 
 $EmailERR="";
 $PassERR ="";
+$PassRegERR ="";
 $FirstNameERR="";
 $LastNameERR ="";
 $BirthdayERR ="";
@@ -32,10 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (empty($_POST["Password"])) {
         $PassERR = "Password is required";
-    }else if (!preg_match('/[^A-Za-z0-9]+/', $Password || strlen($Password < 8))) {
-            $PassERR = "PASSWORD MUST BE AT LEAST 8 CHARACTERS";
+    }else if (strlen($Password) < 8) {
+        $PassERR = "PASSWORD MUST BE AT LEAST 8 CHARACTERS";
         }else {
-        $PassERR = test_input($_POST["Password"]);
+        $Password = test_input($_POST["Password"]);
     }
 
 
@@ -58,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
             if (empty($_POST["EmailReg"])) {
-                    $EmailERR = "Must enter a valid email";
+                    $EmailRegERR = "Must enter a valid email";
                 } else {
                     $EmailReg = test_input($_POST["EmailReg"]);
                     if (!filter_var($EmailReg, FILTER_VALIDATE_EMAIL)) {
@@ -68,29 +69,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
             if (empty($_POST["PassReg"])) {
-                        $PassERR = "Password is required";
-                    }else if (!preg_match('/[^A-Za-z0-9]+/', $Password || strlen($PassReg < 8))) {
-                            $PassERR = "PASSWORD MUST BE AT LEAST 8 CHARACTERS";
+                        $PassRegERR = "Password is required";
+                    }else if ( strlen($PassReg) < 8) {
+                            $PassRegERR = "PASSWORD MUST BE AT LEAST 8 CHARACTERS";
                         }else {
-                $PassERR = test_input($_POST["PassReg"]);
+                $PassReg = test_input($_POST["PassReg"]);
                     }
                 }
 
 if (empty($_POST["NameQuestion"])) {
     $NameQuestionERR = "PLEASE ENTER QUESTION";
-} else if (strlen($NameQuestion < 3)) {
+} else if (strlen($NameQuestion) < 3) {
     $NameQuestionERR = "MUST BE AT LEAST 3 CHARACTERS";
 }else {
-    $NameQuestionERR=test_input($_POST["NameQuestion"]);
+    $NameQuestion=test_input($_POST["NameQuestion"]);
 }
 
 
 if (empty($_POST[$TextBox] )) {
     $TextBoxERR = "MUST ENTER TEXT ";
-} else if (strlen($TextBox >500)){
+} else if (strlen($TextBox) >500){
     $TextBoxERR = "MUST BE AT UNDER 500 CHARACTERS";
 }else {
-    $TextBoxERR = test_input($_POST["TextBox"]);
+    $TextBox = test_input($_POST["TextBox"]);
 }
 
 
@@ -143,7 +144,7 @@ function test_input($data) {
 
 <div>
         Password:<?php echo $PassReg ; ?>
-        <span class="error">* <?php echo $PassERR ; ?> </span>
+        <span class="error">* <?php echo $PassRegERR ; ?> </span>
 </div>
 
 

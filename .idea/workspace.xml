@@ -19,7 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ba04d33-083f-40fb-9f13-3a0d21a609b9" name="Default Changelist" comment="QUESTION FORM UPDATE">
+    <list default="true" id="4ba04d33-083f-40fb-9f13-3a0d21a609b9" name="Default Changelist" comment="commas, explode, update">
+      <change afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/display.php" beforeDir="false" afterPath="$PROJECT_DIR$/display.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
@@ -36,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -58,6 +60,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -74,7 +77,9 @@
       <workItem from="1603081579009" duration="2403000" />
       <workItem from="1603231947140" duration="797000" />
       <workItem from="1603824830053" duration="3880000" />
-      <workItem from="1603836589872" duration="1579000" />
+      <workItem from="1603836589872" duration="3202000" />
+      <workItem from="1604075030506" duration="110000" />
+      <workItem from="1604078699951" duration="3326000" />
     </task>
     <task id="LOCAL-00001" summary="QUESTION FORM UPDATE">
       <created>1603828352918</created>
@@ -83,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603828352918</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commas, explode, update">
+      <created>1603838183976</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603838183976</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,7 +115,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="QUESTION FORM UPDATE" />
-    <option name="LAST_COMMIT_MESSAGE" value="QUESTION FORM UPDATE" />
+    <MESSAGE value="commas, explode, update" />
+    <option name="LAST_COMMIT_MESSAGE" value="commas, explode, update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="585" y="198" key="#Deployment" timestamp="1603039183236">
@@ -146,10 +159,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="593" y="211" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603037469691" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603828405821">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603838222269">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603828405821" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603838222269" />
     <state x="849" y="439" key="WebDeployment.AddServerDialog.v.1" timestamp="1603037495111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
